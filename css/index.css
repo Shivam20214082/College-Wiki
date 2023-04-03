@@ -1,0 +1,89 @@
+body {
+  height: 100%;
+  margin: 0px;
+}
+header {
+  height: 5%;
+  background-color: rgb(48, 49, 49);
+  color: aliceblue;
+  display: flex;
+  flex-direction: row;
+}
+.logo {
+  margin-right: auto;
+  display: flex;
+  margin-left: 18px;
+  margin-top: 10px;
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  float: right;
+  margin-right: 18px;
+}
+
+.menu li {
+  margin: 10px;
+}
+a {
+  cursor: pointer;
+  color: aliceblue;
+  text-decoration: none;
+}
+
+main {
+  height: 70%;
+}
+
+footer {
+  line-height: 30px;
+  font-size: medium;
+  padding-left: 25px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #595c88;
+  color: aliceblue;
+}
+
+.div1 {
+  background-color: rgb(48, 49, 49);
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.subscribe {
+  color: aliceblue;
+  background-color: black;
+  text-align: center;
+  padding: 10px;
+  text-decoration: underline;
+}
+
+.last-section {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  list-style-type: none;
+}
+
+.personal-link {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.link {
+  padding-top: 60px;
+  padding-right: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
