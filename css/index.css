@@ -43,6 +43,7 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
+  margin-top: 20px;
   background-color: #595c88;
   color: aliceblue;
 }
@@ -86,4 +87,59 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.top-colleges {
+  position: relative;
+  overflow: hidden;
+  /* width: 2334px; */
+}
+
+.top-colleges-wrapper {
+  display: flex;
+  transition: transform 1.5s ease;
+}
+.top-exams-wrapper {
+  display: flex;
+  transition: transform 1.5s ease;
+}
+
+.top-colleges-item {
+  width: 389px;
+  flex-shrink: 0;
+  margin: 10px;
+}
+.top-exams-item {
+  width: 389px;
+  flex-shrink: 0;
+  margin: 10px;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #3f434c;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.scroll-left {
+  left: 0;
+}
+
+.scroll-right {
+  right: 0;
+}
+.scroll-left2 {
+  left: 0;
+}
+
+.scroll-right2 {
+  right: 0;
 }
