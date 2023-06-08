@@ -4,8 +4,7 @@ body {
 }
 
 header {
-	background-image: url(file:///C:/Users/INDIAN/Downloads/iit_bombay.jpg);
-	height: 30vh;
+	height: 20vh;
 	background-size: cover;
 	background-position: center;
 	background-color: rgba(0, 0, 0, 0.7);
@@ -58,4 +57,3 @@ form label {
 	display: block;
 	margin-bottom: 5px;
 }
-
