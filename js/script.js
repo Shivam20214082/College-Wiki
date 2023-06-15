@@ -45,3 +45,7 @@ rightButton2.addEventListener("click", () => {
     wrapper2.style.transform = `translateX(${currentPosition2}px)`;
   }
 });
+
+function news() {
+  window.location.href = "404.html";
+}
