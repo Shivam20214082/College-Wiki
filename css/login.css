@@ -1,26 +1,19 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 body {
+  /* padding: 10px; */
   font-family: "Poppins", sans-serif;
-  overflow: hidden;
-}
-
-.wave {
-  position: fixed;
-  height: 100%;
-  width: 1920px;
-  left: 0;
-  bottom: 0;
-  z-index: -1;
+    background-color: #be6922;
+    color: #ffffff;
+  
+  /* overflow: hidden; */
 }
 
 .container {
-  width: 100vw;
-  height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 7rem;
@@ -29,7 +22,7 @@ body {
 
 .img {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
@@ -44,8 +37,9 @@ body {
   width: 400px;
 }
 
-form {
+.form {
   width: 460px;
+  display: none; /* Initially hide the forms */
 }
 
 .avatar {
@@ -59,16 +53,13 @@ form h2 {
   color: #ccff33;
 }
 
-.login-container .input-div {
+.input-div {
   position: relative;
   display: grid;
   grid-template-columns: 7% 93%;
   margin: 25px 0;
   padding: 5px 0;
   border-bottom: 2px solid #d9d9d9;
-}
-.input-div.one {
-  margin-top: 0;
 }
 
 .input-div:after,
@@ -102,14 +93,6 @@ form h2 {
 
 .input-div.focus > .i > i {
   color: #38d39f;
-}
-
-.input-div.one {
-  margin-top: 0;
-}
-
-.input-div.two {
-  margin-bottom: 4px;
 }
 
 .i {
@@ -154,10 +137,6 @@ form h2 {
   color: #555;
 }
 
-.input-div.pass {
-  margin-bottom: 4px;
-}
-
 a {
   display: block;
   text-align: right;
@@ -193,6 +172,22 @@ a:hover {
   background-position: right;
 }
 
+.register-link {
+  margin-top: 20px;
+}
+
+.register-link a {
+  color: #999;
+}
+
+.show-login .login-form,
+.show-register .register-form {
+  display: block; /* Show respective forms based on class */
+}
+/* footer{
+  position:static;
+} */
+
 @media screen and (max-width: 1050px) {
   .container {
     grid-gap: 5rem;
@@ -200,7 +195,7 @@ a:hover {
 }
 
 @media screen and (max-width: 1000px) {
-  form {
+  .form {
     width: 290px;
   }
 

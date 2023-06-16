@@ -1,51 +1,69 @@
-const wrapper = document.querySelector(".top-colleges-wrapper");
-const wrapper2 = document.querySelector(".top-exams-wrapper");
-const items1 = document.querySelectorAll(".top-colleges-item");
-const items2 = document.querySelectorAll(".top-exams-item");
-const leftButton1 = document.querySelector(".scroll-left");
-const rightButton1 = document.querySelector(".scroll-right");
-const leftButton2 = document.querySelector(".scroll-left2");
-const rightButton2 = document.querySelector(".scroll-right2");
+// Replace YOUR_API_KEY with your actual API key
+const apiKey = "e3dc8bdd41a0482f88f71b30307719ad";
+const category = "general"; // Replace with the desired category (e.g., sports, technology, business)
+const apiUrl = `https://newsapi.org/v2/top-headlines?country=in&q=education&apiKey=e3dc8bdd41a0482f88f71b30307719ad`;
 
-const itemWidth = items1[0].offsetWidth;
-const wrapperWidth = itemWidth * items1.length;
+function fetchNews() {
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      const newsContainer = document.getElementById("news-container");
+      newsContainer.innerHTML = "";
 
-const itemWidth2 = items2[0].offsetWidth;
-const wrapperWidth2 = itemWidth2 * items2.length;
-let currentPosition = 0;
-let currentPosition2 = 0;
+      if (data.status === "ok" && data.articles.length > 0) {
+        for (let i = 0; i < 3; i++) {
+          const article = data.articles[i];
+          const { title, publishedAt, description, urlToImage, url } = article;
 
-wrapper.style.width = `${wrapperWidth}px`;
-wrapper2.style.width = `${wrapperWidth2}px`;
+          const newsItem = document.createElement("div");
+          newsItem.className = "news1";
 
-leftButton1.addEventListener("click", () => {
-  if (currentPosition < 0) {
-    currentPosition += itemWidth * 3 + 75;
-    wrapper.style.transform = `translateX(${currentPosition}px)`;
-  }
-});
+          const newsImage = document.createElement("img");
+          newsImage.className = "news-image";
+          newsImage.src = urlToImage;
+          newsImage.alt = title;
 
-rightButton1.addEventListener("click", () => {
-  if (currentPosition > -wrapperWidth + itemWidth * 3) {
-    currentPosition -= itemWidth * 3 + 75;
-    wrapper.style.transform = `translateX(${currentPosition}px)`;
-  }
-});
+          const newsDetails = document.createElement("div");
+          newsDetails.className = "news-details";
 
-leftButton2.addEventListener("click", () => {
-  if (currentPosition2 < 0) {
-    currentPosition2 += itemWidth2 * 3 + 75;
-    wrapper2.style.transform = `translateX(${currentPosition2}px)`;
-  }
-});
+          const newsTitle = document.createElement("h3");
+          newsTitle.className = "news-title";
+          newsTitle.textContent = title;
 
-rightButton2.addEventListener("click", () => {
-  if (currentPosition2 > -wrapperWidth2 + itemWidth2 * 3) {
-    currentPosition2 -= itemWidth2 * 3 + 75;
-    wrapper2.style.transform = `translateX(${currentPosition2}px)`;
-  }
-});
+          const newsDate = document.createElement("p");
+          newsDate.className = "news-date";
+          newsDate.textContent = new Date(publishedAt).toDateString();
 
-function news() {
-  window.location.href = "404.html";
+          const newsDescription = document.createElement("p");
+          newsDescription.className = "news-description";
+          newsDescription.textContent = description;
+
+          const newsLink = document.createElement("a");
+          newsLink.href = url;
+          newsLink.target = "_blank";
+          newsLink.textContent = "Read More";
+          newsLink.style = "color:white; border:solid black; background-color:red;border-radius:5px;float:right;padding:5px";
+
+          newsDetails.append(newsTitle, newsDate, newsDescription, newsLink);
+          newsItem.append(newsImage, newsDetails);
+          newsContainer.appendChild(newsItem);
+        }
+      } else {
+        const noNewsMessage = document.createElement("p");
+        noNewsMessage.textContent = "No news available.";
+        newsContainer.appendChild(noNewsMessage);
+      }
+    })
+    .catch((error) => {
+      console.log("Error:", error);
+    });
+}
+
+// Fetch news on page load
+fetchNews();
+
+
+
+function loadMoreNews(){
+    window.location.href="news.html";
 }

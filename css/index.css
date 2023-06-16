@@ -98,24 +98,35 @@ footer {
   /* width: 2334px; */
 }
 
-.top-colleges-wrapper {
-  display: flex;
-  transition: transform 1.5s ease;
-}
+
+.top-colleges-wrapper,
 .top-exams-wrapper {
   display: flex;
   transition: transform 1.5s ease;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-snap-type: x mandatory;
+  scroll-snap-type: none;
 }
 
-.top-colleges-item {
-  width: 389px;
-  flex-shrink: 0;
-  margin: 10px;
-}
+.top-colleges-item,
 .top-exams-item {
-  width: 389px;
+  display: flex;
+  justify-content: center;
+  border: solid black;
+  width: 350px;
   flex-shrink: 0;
   margin: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  scroll-snap-align: center;
+}
+
+.top-colleges-item img,
+.top-exams-item img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
 .scroll-button {
@@ -132,6 +143,13 @@ footer {
   cursor: pointer;
 }
 
+.scroll-left,
+.scroll-right,
+.scroll-left2,
+.scroll-right2 {
+  z-index: 1;
+}
+
 .scroll-left {
   left: 0;
 }
@@ -139,6 +157,7 @@ footer {
 .scroll-right {
   right: 0;
 }
+
 .scroll-left2 {
   left: 0;
 }
@@ -147,14 +166,73 @@ footer {
   right: 0;
 }
 
-.news1 {
-  display: flex;
-  flex-direction: row;
-  margin: 20px;
+.news {
   padding: 20px;
-  border: 1px solid black;
 }
 
-.exam-news {
-  margin: 5px;
+.news h2 {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+.news1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.news-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.news-details {
+  flex-grow: 1;
+}
+
+.news-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.news-date {
+  font-size: 12px;
+  color: #888;
+}
+
+.news-description {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.news-btn {
+  display: flex;
+  justify-content: right;
+  margin-top: 20px;
+}
+
+.news-btn button {
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  color: white;
+  background-color: rgb(130, 12, 12);
+}
+
+
+/* Footer Styles */
+footer {
+  /* padding: 20px; */
+  text-align: center;
+  background-color: #595c88;
+  color: aliceblue;
+  font-size: 18px;
 }

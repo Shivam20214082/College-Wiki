@@ -3,11 +3,11 @@ body {
 	margin: 0;
 }
 
-header {
+.head {
 	height: 20vh;
 	background-size: cover;
 	background-position: center;
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgb(48, 49, 49);
 	background-blend-mode: darken;	
 	
 	text-align: center;

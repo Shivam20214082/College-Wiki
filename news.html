@@ -22,68 +22,13 @@
         </div>
       </header>
 
-    <section id="latest-news">
-        <h2>LATEST NEWS</h2>
-        <div class="article-grid">
-            <div class="article">
-                <h3>Article 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div class="article">
-                <h3>Article 2</h3>
-                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            <div class="article">
-                <h3>Article 3</h3>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-            </div>
+      <section class="news">
+        <h2>Latest News</h2>
+        <div id="news-container"></div>
+        <div class="news-btn">
+          <button onclick="loadMoreNews()">See More</button>
         </div>
-    </section>
-
-    <section id="featured-articles">
-        <h2>FEATURED ARTICLES</h2>
-        <div class="article-grid">
-            <div class="article">
-                <h3>Featured Article 1</h3>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-            </div>
-            <div class="article">
-                <h3>Featured Article 2</h3>
-                <p>Excepteur sint occaecat cupidatat non proident.</p>
-            </div>
-            <div class="article">
-                <h3>Featured Article 3</h3>
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="trending-news">
-        <h2>TRENDING NEWS</h2>
-        <div class="article-grid">
-            <div class="article">
-                <h3>Trending Article 1</h3>
-                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-            </div>
-            <div class="article">
-                <h3>Trending Article 2</h3>
-                <p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>
-            </div>
-            <div class="article">
-                <h3>Trending Article 3</h3>
-                <p>Labore et dolore magnam aliquam quaerat voluptatem.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- <section id="related-categories">
-        <h2>RELATED NEWS CATEGORIES</h2>
-        <div class="category-grid">
-            <div class="category">Category 1</div>
-            <div class="category">Category 2</div>
-            <div class="category">Category 3</div>
-        </div>
-    </section> -->
+      </section>
 
 
     <footer class="footer">
@@ -142,6 +87,74 @@
         <a href="index.html">CollegeWiki</a> @ Copyright 2023
       </div>
     </footer>
-      <script src="./js/script.js"></script>
+      <!-- <script src="./js/script.js"></script> -->
+      <script>
+        const apiKey = "e3dc8bdd41a0482f88f71b30307719ad";
+const apiUrl = `https://newsapi.org/v2/everything?q=education&apiKey=${apiKey}`;
+
+// Fetch news data from the API
+async function fetchNews(containerId) {
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        const articles = data.articles;
+
+        const newsContainer = document.getElementById(containerId);
+
+        // Display news articles
+        for (let i = 0; i < articles.length; i++) {
+            if (i >= 10) {
+                break;
+            }
+            const article = data.articles[i];
+          const { title, publishedAt, description, urlToImage, url } = article;
+
+          const newsItem = document.createElement("div");
+          newsItem.className = "news1";
+
+          const newsImage = document.createElement("img");
+          newsImage.className = "news-image";
+          newsImage.src = urlToImage;
+          newsImage.alt = title;
+
+          const newsDetails = document.createElement("div");
+          newsDetails.className = "news-details";
+
+          const newsTitle = document.createElement("h3");
+          newsTitle.className = "news-title";
+          newsTitle.textContent = title;
+
+          const newsDate = document.createElement("p");
+          newsDate.className = "news-date";
+          newsDate.textContent = new Date(publishedAt).toDateString();
+
+          const newsDescription = document.createElement("p");
+          newsDescription.className = "news-description";
+          newsDescription.textContent = description;
+
+          const newsLink = document.createElement("a");
+          newsLink.href = url;
+          newsLink.target = "_blank";
+          newsLink.textContent = "Read More";
+          newsLink.style = "color:white; border:solid black; background-color:red;border-radius:5px ; float:right;padding:5px";
+
+          newsDetails.append(newsTitle, newsDate, newsDescription, newsLink);
+          newsItem.append(newsImage, newsDetails);
+          newsContainer.appendChild(newsItem);
+          }
+    } catch (error) {
+        console.error("Error fetching news:", error);
+    }
+}
+
+// Load more news and redirect to a new page
+function loadMoreNews() {
+    window.location.href = "news.html";
+}
+
+// Fetch news on page load
+fetchNews("news-container");
+
+    </script>
 </body>
 </html>

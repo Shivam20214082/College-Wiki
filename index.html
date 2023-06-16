@@ -26,7 +26,7 @@
 
     <main class="main">
       <div class="div0">
-        <div class="div1">
+        <div class="div1" style="background-color: rgb(48, 49, 49);">
           <h1 class="slogan" style="text-align: center; color: aliceblue">
             Welcome
           </h1>
@@ -71,7 +71,7 @@
           <div class="top-colleges-item">
             <a href="delhi.html">
               <img
-                src="./image/iitdelhi.jpg"
+                src="./college images/idelhi (1).jpg"
                 style="width: 100%; cursor: pointer"
                 alt="iitb"
             /></a>
@@ -79,7 +79,7 @@
           <div class="top-colleges-item">
             <a href="roorkee.html">
               <img
-                src="./image/iitb.jpg"
+                src="./college images/iroorkee.jpg"
                 style="width: 100%; cursor: pointer"
                 alt="iitb"
             /></a>
@@ -87,7 +87,7 @@
           <div class="top-colleges-item">
             <a href="trichy.html">
               <img
-                src="./image/iitb.jpg"
+                src="./college images/ntrichy.jpg"
                 style="width: 100%; cursor: pointer"
                 alt="iitb"
             /></a>
@@ -95,7 +95,7 @@
           <div class="top-colleges-item">
             <a href="mnnit.html">
               <img
-                src="./image/iitb.jpg"
+                src="./college images/nallahabad.jpg"
                 style="width: 100%; cursor: pointer"
                 alt="iitb"
             /></a>
@@ -103,14 +103,12 @@
           <div class="top-colleges-item">
             <a href="suratkal.html">
               <img
-                src="./image/iitb.jpg"
+                src="./college images/nsurathkal.jpg"
                 style="width: 100%; cursor: pointer"
                 alt="iitb"
             /></a>
           </div>
         </div>
-        <button class="scroll-button scroll-left">&#8249;</button>
-        <button class="scroll-button scroll-right">&#8250;</button>
       </section>
 
       <h1 style="text-align: center; padding: 10px">Top Exams</h1>
@@ -165,58 +163,16 @@
             /></a>
           </div>
         </div>
-        <button class="scroll-button scroll-left2">&#8249;</button>
-        <button class="scroll-button scroll-right2">&#8250;</button>
       </section>
 
-      <section class="news" id="news">
-        <h1 style="text-align: center; text-decoration: underline">
-          Latest News
-        </h1>
-        <div class="news1">
-          <img
-            src="image/avatar.png"
-            alt="image"
-            style="width: 150px; height: 150px"
-          />
-          <div class="exam-news"><h1>News Content</h1></div>
-        </div>
-        <div class="news1">
-          <img
-            src="image/avatar.png"
-            alt="image"
-            style="width: 150px; height: 150px"
-          />
-          <div class="exam-news"><h1>News Content</h1></div>
-        </div>
-        <div class="news1">
-          <img
-            src="image/avatar.png"
-            alt="image"
-            style="width: 150px; height: 150px"
-          />
-          <div class="exam-news"><h1>News Content</h1></div>
-        </div>
-
-        <div
-          class="new-btn"
-          style="display: flex; justify-content: right; margin-right: 20px"
-        >
-          <button
-            style="
-              cursor: pointer;
-              border-radius: 5px;
-              width: 100px;
-              height: 40px;
-              color: white;
-              background-color: rgb(130, 12, 12);
-            "
-            onclick="news()"
-          >
-            See More
-          </button>
+      <section class="news">
+        <h2>Latest News</h2>
+        <div id="news-container"></div>
+        <div class="news-btn">
+          <button onclick="loadMoreNews()">See More</button>
         </div>
       </section>
+      
     </main>
 
     <footer class="footer">
