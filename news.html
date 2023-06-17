@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <link rel="stylesheet" href="./css/index.css" />
-    <link rel="stylesheet" type="text/css" href="css/news.css">
+    <link rel="stylesheet" type="text/css" href="css/news.css" />
     <script
       src="https://kit.fontawesome.com/2dfb895f73.js"
       crossorigin="anonymous"
     ></script>
     <title>News</title>
-
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <div class="logo"><a href="index.html">CollegeWiki</a></div>
-        <div class="menu">
-          <li class="News"><a href="#news">News</a></li>
-          <li class="College"><a href="college.html">College</a></li>
-          <li class="Exam"><a href="exam.html">Exam</a></li>
-          <li class="Addmission"><a href="admission.html">Addmission</a></li>
-          <li class="Forum"><a href="404.html">Forum</a></li>
-        </div>
-      </header>
+      <div class="logo"><a href="index.html">CollegeWiki</a></div>
+      <div class="menu">
+        <li class="News"><a href="#news">News</a></li>
+        <li class="College"><a href="college.html">College</a></li>
+        <li class="Exam"><a href="exam.html">Exam</a></li>
+        <li class="Addmission"><a href="admission.html">Addmission</a></li>
+        <li class="Forum"><a href="404.html">Forum</a></li>
+      </div>
+    </header>
 
-      <section class="news">
-        <h2>Latest News</h2>
-        <div id="news-container"></div>
-        <div class="news-btn">
-          <button onclick="loadMoreNews()">See More</button>
-        </div>
-      </section>
-
+    <section class="news">
+      <h2>Latest News</h2>
+      <div id="news-container"></div>
+      <div class="news-btn">
+        <button onclick="loadMoreNews()">See More</button>
+      </div>
+    </section>
 
     <footer class="footer">
       <section class="last-section">
@@ -84,77 +82,77 @@
         </div>
       </section>
       <div class="copyright" style="text-align: center; padding: 20px">
-        <a href="index.html">CollegeWiki</a> @ Copyright 2023
+        <a href="index.html">CollegeWiki</a> &copy; 2023
       </div>
     </footer>
-      <!-- <script src="./js/script.js"></script> -->
-      <script>
-        const apiKey = "e3dc8bdd41a0482f88f71b30307719ad";
-const apiUrl = `https://newsapi.org/v2/everything?q=education&apiKey=${apiKey}`;
+    <!-- <script src="./js/script.js"></script> -->
+    <script>
+      const apiKey = "ee10c3e410ede0b799c1072f61c0110a";
+      const apiUrl = `https://gnews.io/api/v4/search?q=education&token=${apiKey}`;
 
-// Fetch news data from the API
-async function fetchNews(containerId) {
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        const articles = data.articles;
+      // Fetch news data from the API
+      async function fetchNews(containerId) {
+        try {
+          const response = await fetch(apiUrl);
+          const data = await response.json();
+          const articles = data.articles;
 
-        const newsContainer = document.getElementById(containerId);
+          const newsContainer = document.getElementById(containerId);
 
-        // Display news articles
-        for (let i = 0; i < articles.length; i++) {
+          // Display news articles
+          for (let i = 0; i < articles.length; i++) {
             if (i >= 10) {
-                break;
+              break;
             }
-            const article = data.articles[i];
-          const { title, publishedAt, description, urlToImage, url } = article;
+            const article = articles[i];
+            const { title, publishedAt, description, image, url } = article;
 
-          const newsItem = document.createElement("div");
-          newsItem.className = "news1";
+            const newsItem = document.createElement("div");
+            newsItem.className = "news1";
 
-          const newsImage = document.createElement("img");
-          newsImage.className = "news-image";
-          newsImage.src = urlToImage;
-          newsImage.alt = title;
+            const newsImage = document.createElement("img");
+            newsImage.className = "news-image";
+            newsImage.src = image;
+            newsImage.alt = title;
 
-          const newsDetails = document.createElement("div");
-          newsDetails.className = "news-details";
+            const newsDetails = document.createElement("div");
+            newsDetails.className = "news-details";
 
-          const newsTitle = document.createElement("h3");
-          newsTitle.className = "news-title";
-          newsTitle.textContent = title;
+            const newsTitle = document.createElement("h3");
+            newsTitle.className = "news-title";
+            newsTitle.textContent = title;
 
-          const newsDate = document.createElement("p");
-          newsDate.className = "news-date";
-          newsDate.textContent = new Date(publishedAt).toDateString();
+            const newsDate = document.createElement("p");
+            newsDate.className = "news-date";
+            newsDate.textContent = new Date(publishedAt).toDateString();
 
-          const newsDescription = document.createElement("p");
-          newsDescription.className = "news-description";
-          newsDescription.textContent = description;
+            const newsDescription = document.createElement("p");
+            newsDescription.className = "news-description";
+            newsDescription.textContent = description;
 
-          const newsLink = document.createElement("a");
-          newsLink.href = url;
-          newsLink.target = "_blank";
-          newsLink.textContent = "Read More";
-          newsLink.style = "color:white; border:solid black; background-color:red;border-radius:5px ; float:right;padding:5px";
+            const newsLink = document.createElement("a");
+            newsLink.href = url;
+            newsLink.target = "_blank";
+            newsLink.textContent = "Read More";
+            newsLink.style =
+              "color:white; border:solid black; background-color:red;border-radius:5px ; float:right;padding:5px";
 
-          newsDetails.append(newsTitle, newsDate, newsDescription, newsLink);
-          newsItem.append(newsImage, newsDetails);
-          newsContainer.appendChild(newsItem);
+            newsDetails.append(newsTitle, newsDate, newsDescription, newsLink);
+            newsItem.append(newsImage, newsDetails);
+            newsContainer.appendChild(newsItem);
           }
-    } catch (error) {
-        console.error("Error fetching news:", error);
-    }
-}
+        } catch (error) {
+          console.error("Error fetching news:", error);
+        }
+      }
 
-// Load more news and redirect to a new page
-function loadMoreNews() {
-    window.location.href = "news.html";
-}
+      // Load more news and redirect to a new page
+      function loadMoreNews() {
+        window.location.href = "news.html";
+      }
 
-// Fetch news on page load
-fetchNews("news-container");
-
+      // Fetch news on page load
+      fetchNews("news-container");
     </script>
-</body>
+  </body>
 </html>

@@ -1,7 +1,5 @@
-// Replace YOUR_API_KEY with your actual API key
-const apiKey = "e3dc8bdd41a0482f88f71b30307719ad";
-const category = "general"; // Replace with the desired category (e.g., sports, technology, business)
-const apiUrl = `https://newsapi.org/v2/top-headlines?country=in&q=education&apiKey=e3dc8bdd41a0482f88f71b30307719ad`;
+const apiKey = "ee10c3e410ede0b799c1072f61c0110a";
+const apiUrl = `https://gnews.io/api/v4/search?q=education&token=ee10c3e410ede0b799c1072f61c0110a`;
 
 function fetchNews() {
   fetch(apiUrl)
@@ -10,18 +8,22 @@ function fetchNews() {
       const newsContainer = document.getElementById("news-container");
       newsContainer.innerHTML = "";
 
-      if (data.status === "ok" && data.articles.length > 0) {
+      if (data.articles && data.articles.length > 0) {
+        const newsSection = document.createElement("section");
+        newsSection.className = "news-section";
+
         for (let i = 0; i < 3; i++) {
           const article = data.articles[i];
-          const { title, publishedAt, description, urlToImage, url } = article;
+          const { title, publishedAt, description, image, url } = article;
 
           const newsItem = document.createElement("div");
           newsItem.className = "news1";
 
           const newsImage = document.createElement("img");
           newsImage.className = "news-image";
-          newsImage.src = urlToImage;
           newsImage.alt = title;
+          newsImage.src = image;
+
 
           const newsDetails = document.createElement("div");
           newsDetails.className = "news-details";
@@ -42,12 +44,15 @@ function fetchNews() {
           newsLink.href = url;
           newsLink.target = "_blank";
           newsLink.textContent = "Read More";
-          newsLink.style = "color:white; border:solid black; background-color:red;border-radius:5px;float:right;padding:5px";
+          newsLink.style =
+            "color:white; border:solid black; background-color:red;border-radius:5px;float:right;padding:5px";
 
           newsDetails.append(newsTitle, newsDate, newsDescription, newsLink);
           newsItem.append(newsImage, newsDetails);
-          newsContainer.appendChild(newsItem);
+          newsSection.appendChild(newsItem);
         }
+
+        newsContainer.appendChild(newsSection);
       } else {
         const noNewsMessage = document.createElement("p");
         noNewsMessage.textContent = "No news available.";
@@ -62,8 +67,6 @@ function fetchNews() {
 // Fetch news on page load
 fetchNews();
 
-
-
-function loadMoreNews(){
-    window.location.href="news.html";
+function loadMoreNews() {
+  window.location.href = "news.html";
 }
