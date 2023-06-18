@@ -12,26 +12,28 @@
 
     <style>
         .container {
-          /* max-width: 800px; */
-          /* margin: 0 auto; */
-          padding: 10px;
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
-          flex-direction: row;
+          margin: 20px;
         }
         .exam {
+            width: 100%;
           display: flex;
           flex-direction: column;
           align-items: center;
           margin: 20px;
           padding: 20px;
-          border-style: solid;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          background-color: #fff;
         }
         .exam img {
-          width: 200px;
-          height: 200px;
-          margin-right: 10px;
+          width: 100%;
+          height: 100%;
+          margin-bottom: 10px;
+          object-fit: cover;
+          border-radius: 4px;
         }
         .exam a {
           text-decoration: none;
@@ -77,7 +79,7 @@
             <div class="searchc">
               <input
                 type="text"
-                placeholder="Search Exams"
+                placeholder="Search Colleges"
                 style="width: 400px; height: 20px; margin-right: 0%"
               />
               <button
@@ -97,47 +99,44 @@
             </div>
           </div>
           <div class="subscribe">
-            <a href="login.html">Subscribe for Exam Update</a>
+            <a href="login.html">Subscribe for Colleges Update</a>
           </div>
         </div>
 
 
 
         <div class="container">
-            <div class="exam" href="jeemain.html">
-              <img src="image/jeemain.jpg" alt="Jee Main">
-              <a href="jeemain.html"style="font-weight:bold;">Jee Main</a>
+            <div class="exam">
+              <a href="bombay.html"><img src="image/iitbombay.jpg" alt="IIT Bombay"></a>
+              <a href="bombay.html"style="font-weight:bold;">IIT Bombay</a>
             </div>
             <div class="exam">
-              <img src="image/jee advanced.jpg" alt="Jee Advanced">
-              <a href="404.html">Jee Advanced</a>
+              <a href="delhi.html"><img src="college images/idelhi (1).jpg" alt="IIT Delhi"></a>
+              <a href="delhi.html">IIT Delhi</a>
             </div>
             <div class="exam">
-              <img src="image/wbjee.jpg" alt="wbjee">
-              <a href="404.html">wbjee</a>
+              <a href="madras.html"><img src="college images/imadras.jpg" alt="IIT Madras"></a>
+              <a href="madras.html">IIT Madras</a>
             </div>
-            <!-- Add more exam entries as needed -->
-        
         </div>
         <div class="container">
-            <div class="exam" href="jeemain.html">
-              <img src="image/jeemain.jpg" alt="Jee Main">
-              <a href="jeemain.html"style="font-weight:bold;">Jee Main</a>
+            <div class="exam">
+              <a href="mnnit.html"><img src="college images/nallahabad.jpg" alt="IIT Bombay"></a>
+              <a href="mnnit.html"style="font-weight:bold;">MNNIT</a>
             </div>
             <div class="exam">
-              <img src="image/jee advanced.jpg" alt="Jee Advanced">
-              <a href="404.html">Jee Advanced</a>
+              <a href="suratkal.html"> <img src="college images/nsurathkal.jpg" alt="IIT Delhi"></a>
+              <a href="suratkal.html">NIT SuratKal</a>
             </div>
             <div class="exam">
-              <img src="image/wbjee.jpg" alt="wbjee">
-              <a href="404.html">wbjee</a>
+              <a href="trichy.html"> <img src="college images/ntrichy.jpg" alt="NIT Trichy"></a>
+              <a href="trichy.html">NIT Trichy</a>
             </div>
+        </div>
             <!-- Add more exam entries as needed -->
         
         </div>
-        <div class="see-more">
-          <button>See More</button>
-        </div>
+        <h1>More Colleges Will be added Soon!!!!</h1>
 
 
         <!-- footer -->
@@ -145,28 +144,32 @@
           <section class="last-section">
             <div style="margin-top: 20px">
               <h1 style="text-align: center">College</h1>
-            
+              <ul>
                 <li><a href="alliit.html">All IITs</a></li>
                 <li><a href="allnit.html">All NITs</a></li>
                 <li><a href="alliiit.html">All IIITs</a></li>
                 <li><a href="allstatecollege.html">All State Colleges</a></li>
                 <li><a href="allisers.html">All IISERs</a></li>
-              
+              </ul>
             </div>
             <div style="margin-top: 20px">
               <h1 style="text-align: center">Exam</h1>
-              <li><a href="jeemain.html">Jee Main</a></li>
-              <li><a href="jeeadvanced.html">Jee Advanced</a></li>
-              <li><a href="404.html">BITSAT</a></li>
-              <li><a href="404.html">WBJEE</a></li>
-              <li><a href="404.html">KVPY</a></li>
+              <ul>
+                <li><a href="jeemain.html">Jee Main</a></li>
+                <li><a href="jeeadvanced.html">Jee Advanced</a></li>
+                <li><a href="404.html">BITSAT</a></li>
+                <li><a href="404.html">WBJEE</a></li>
+                <li><a href="404.html">KVPY</a></li>
+              </ul>
             </div>
             <div class="personal-link">
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="privacy.html">Privacy</a></li>
-              <li><a href="termsandcondition.html">Term and Condition</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="support.html">Support us</a></li>
+              <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="termsandcondition.html">Term and Condition</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="support.html">Support us</a></li>
+              </ul>
             </div>
             <div class="link">
               <a href="404.html"
@@ -196,10 +199,15 @@
             </div>
           </section>
           <div class="copyright" style="text-align: center; padding: 20px">
-            <a href="index.html">CollegeWiki</a> @ Copyright 2023
+            <a href="index.html">CollegeWiki</a> @ 2023
           </div>
         </footer>
           <script src="./js/script.js"></script>
+          <script>
+            function seemore(){
+              window.location.href="404.html";
+            }
+          </script>
 
 </body>
 </html>
