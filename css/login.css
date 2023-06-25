@@ -5,9 +5,12 @@
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
   /* padding: 10px; */
   font-family: "Poppins", sans-serif;
-    background-color: #be6922;
+    /* background-color: #be6922; */
+    background-image: url("../image/wave.jpg");
     color: #ffffff;
   
   /* overflow: hidden; */
@@ -18,6 +21,14 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 7rem;
   padding: 0 2rem;
+}
+.wave {
+  position: fixed;
+  height: 100%;
+  width: 1920px;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
 .img {
@@ -207,6 +218,10 @@ a:hover {
   .img img {
     width: 400px;
   }
+}
+
+.toggle-form{
+  color: #5438d3;
 }
 
 @media screen and (max-width: 900px) {

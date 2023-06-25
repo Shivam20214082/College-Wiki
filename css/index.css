@@ -52,14 +52,14 @@ footer {
     width: 100%;
     margin-top: 20px;
     /* background-color: #595c88; */
-    background-image: url('college images/footerpic.jpg');
+    background-image: url('../college images/footerpic.jpg');
     background-size: cover;
     color: aliceblue;
 }
 
 .div1 {
     /* background-color: rgb(74, 152, 152); */
-    background-image: url('college images/backgroundmain.png');
+    background-image: url('../college images/backgroundmain.png');
     background-size: contain;
     display: grid;
     justify-content: center;

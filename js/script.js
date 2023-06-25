@@ -70,3 +70,83 @@ fetchNews();
 function loadMoreNews() {
   window.location.href = "news.html";
 }
+
+
+
+// Get all the colleges
+const collegeItems = document.querySelectorAll(".top-colleges-item");
+
+const collegeData = [
+  { id: "iitbombay", name: "IIT Bombay", link: "bombay.html" },
+  { id: "idelhi", name: "IIT Delhi", link: "delhi.html" },
+  { id: "iroorkee", name: "IIT Roorkee", link: "roorkee.html" },
+  { id: "ntrichy", name: "NIT Trichy", link: "trichy.html" },
+  { id: "nallahabad", name: "MNNIT Allahabad", link: "mnnit.html" },
+  { id: "nsurathkal", name: "NIT Surathkal", link: "suratkal.html" },
+  { id: "jeemain", name: "Jee Main", link: "jeemain.html" },
+  { id: "jeeadvanced", name: "Jee Advanced", link: "jeeadvanced.html" },
+];
+
+// Log the college data to the console
+console.log(collegeData);
+
+// Get references to the search input and results container
+const searchInput = document.getElementById("search-input");
+const searchResultsContainer = document.getElementById("search-results");
+
+// Add an event listener to the search input
+searchInput.addEventListener("input", (e) => {
+  // Get the search query
+  const query = e.target.value.toLowerCase().trim();
+
+  // If there is no search query, hide the search results container and exit the event listener
+  if (query === "") {
+    searchResultsContainer.style.display = "none";
+    return;
+  }
+
+  // Filter the colleges based on the search query
+  const filteredColleges = collegeData.filter((college) => {
+    return college.name.toLowerCase().includes(query);
+  });
+
+  // Update the search results container with the filtered colleges
+  updateSearchResults(filteredColleges);
+});
+
+// Add a click event listener to the document object to hide the search results container when the user clicks outside of it
+document.addEventListener("click", (e) => {
+  // Check if the clicked element is inside the search container or not
+  if (
+    !searchInput.contains(e.target) &&
+    !searchResultsContainer.contains(e.target)
+  ) {
+    searchResultsContainer.style.display = "none";
+  }
+});
+
+// Function to update the search results container
+function updateSearchResults(colleges) {
+  // Clear the current search results
+  searchResultsContainer.innerHTML = "";
+
+  // Loop through each college and add its name and link to the container
+  colleges.forEach((college) => {
+    const collegeElement = document.createElement("div");
+    collegeElement.classList.add("search-result");
+
+    const linkElement = document.createElement("a");
+    linkElement.href = college.link;
+    linkElement.textContent = college.name;
+
+    collegeElement.appendChild(linkElement);
+    searchResultsContainer.appendChild(collegeElement);
+  });
+
+  // Display the search results container if there are results, otherwise hide it
+  if (colleges.length > 0) {
+    searchResultsContainer.style.display = "block";
+  } else {
+    searchResultsContainer.style.display = "none";
+  }
+}

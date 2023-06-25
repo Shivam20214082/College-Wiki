@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
     <script src="https://kit.fontawesome.com/2dfb895f73.js" crossorigin="anonymous"></script>
     <title>Exams</title>
 
@@ -81,21 +81,14 @@
                     Welcome
                 </h1>
                 <div class="searchc">
-                    <input type="text" placeholder="Search Colleges"
-                        style="width: 400px; height: 20px; margin-right: 0%;border-radius: 15px;padding-left:10px; border-color: #337ab7;" />
-                    <button type="submit" style="
-                  width: 80px;
-                  height: 26px;
-                  margin-left: 0%;
-                  background-color: crimson;
-                  color: aliceblue;
-                  border: 0ch;
-                  border-radius: 15px;
-                  /* border-color: #337ab7; */
-                ">
-                        Search
-                    </button>
-                </div>
+                    <input
+                      type="text"
+                      id="search-input"
+                      placeholder="Search colleges, exams, and more"
+                      style="width: 400px; height: 20px; margin-right: 0%"
+                    />
+                    <div id="search-results"></div>
+                  </div>
             </div>
             <div class="subscribe">
                 <a href="login.html">Subscribe for Colleges Update</a>
