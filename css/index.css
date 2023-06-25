@@ -1,238 +1,246 @@
 body {
-  height: 100%;
-  margin: 0px;
+    height: 100%;
+    margin: 0px;
 }
+
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
+
 header {
-  height: 5%;
-  background-color: rgb(48, 49, 49);
-  color: aliceblue;
-  display: flex;
-  flex-direction: row;
+    height: 5%;
+    background-color: rgb(48, 49, 49);
+    color: rgb(6, 128, 235);
+    display: flex;
+    flex-direction: row;
 }
+
 .logo {
-  margin-right: auto;
-  display: flex;
-  margin-left: 18px;
-  margin-top: 10px;
+    margin-right: auto;
+    display: flex;
+    margin-left: 18px;
+    margin-top: 10px;
 }
 
 .menu {
-  list-style-type: none;
-  display: flex;
-  float: right;
-  margin-right: 18px;
+    list-style-type: none;
+    display: flex;
+    float: right;
+    margin-right: 18px;
 }
 
 .menu li {
-  margin: 10px;
+    margin: 10px;
 }
+
 a {
-  cursor: pointer;
-  color: aliceblue;
-  text-decoration: none;
+    cursor: pointer;
+    color: aliceblue;
+    text-decoration: none;
 }
 
 main {
-  height: 70%;
+    height: 70%;
 }
 
 footer {
-  line-height: 30px;
-  font-size: medium;
-  /* margin-left: 25px; */
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  margin-top: 20px;
-  background-color: #595c88;
-  color: aliceblue;
+    line-height: 30px;
+    font-size: medium;
+    /* margin-left: 25px; */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+    /* background-color: #595c88; */
+    background-image: url('college images/footerpic.jpg');
+    background-size: cover;
+    color: aliceblue;
 }
 
 .div1 {
-  background-color: rgb(48, 49, 49);
-  display: grid;
-  justify-content: center;
-  text-align: center;
-  padding-bottom: 100px;
+    /* background-color: rgb(74, 152, 152); */
+    background-image: url('college images/backgroundmain.png');
+    background-size: contain;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 100px;
 }
 
 .subscribe {
-  color: aliceblue;
-  background-color: black;
-  text-align: center;
-  padding: 10px;
-  text-decoration: underline;
+    color: aliceblue;
+    background-color: rgb(44, 43, 43);
+    text-align: center;
+    padding: 10px;
+    text-decoration: underline;
 }
 
 .last-section {
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  text-align: center;
-  list-style-type: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    list-style-type: none;
 }
 
 .personal-link {
-  padding-top: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
 }
 
 .link {
-  padding-top: 60px;
-  padding-right: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    padding-top: 60px;
+    padding-right: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .top-colleges {
-  position: relative;
-  overflow: hidden;
-  /* width: 2334px; */
+    position: relative;
+    overflow: hidden;
+    /* width: 2334px; */
 }
 
 
 .top-colleges-wrapper,
 .top-exams-wrapper {
-  display: flex;
-  transition: transform 1.5s ease;
-  overflow-x: auto;
-  padding-bottom: 20px;
-  scroll-snap-type: x mandatory;
-  scroll-snap-type: none;
+    display: flex;
+    transition: transform 1.5s ease;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+    scroll-snap-type: none;
 }
 
 .top-colleges-item,
 .top-exams-item {
-  display: flex;
-  justify-content: center;
-  border: solid black;
-  width: 350px;
-  flex-shrink: 0;
-  margin: 10px;
-  border-radius: 5px;
-  overflow: hidden;
-  scroll-snap-align: center;
+    display: flex;
+    justify-content: center;
+    border: solid rgb(8, 8, 8);
+    width: 350px;
+    flex-shrink: 0;
+    margin: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    scroll-snap-align: center;
 }
 
 .top-colleges-item img,
 .top-exams-item img {
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
 .scroll-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #3f434c;
-  border: none;
-  font-size: 20px;
-  color: #fff;
-  cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #3f434c;
+    border: none;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
 }
 
 .scroll-left,
 .scroll-right,
 .scroll-left2,
 .scroll-right2 {
-  z-index: 1;
+    z-index: 1;
 }
 
 .scroll-left {
-  left: 0;
+    left: 0;
 }
 
 .scroll-right {
-  right: 0;
+    right: 0;
 }
 
 .scroll-left2 {
-  left: 0;
+    left: 0;
 }
 
 .scroll-right2 {
-  right: 0;
+    right: 0;
 }
 
 .news {
-  padding: 20px;
+    padding: 20px;
 }
 
 .news h2 {
-  text-align: center;
-  text-decoration: underline;
-  margin-bottom: 20px;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 20px;
 }
 
 .news1 {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .news-image {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  margin-right: 20px;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-right: 20px;
 }
 
 .news-details {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 .news-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .news-date {
-  font-size: 12px;
-  color: #888;
+    font-size: 12px;
+    color: #888;
 }
 
 .news-description {
-  margin-top: 10px;
-  line-height: 1.5;
+    margin-top: 10px;
+    line-height: 1.5;
 }
 
 .news-btn {
-  display: flex;
-  justify-content: right;
-  margin-top: 20px;
+    display: flex;
+    justify-content: right;
+    margin-top: 20px;
 }
 
 .news-btn button {
-  cursor: pointer;
-  border-radius: 5px;
-  width: 100px;
-  height: 40px;
-  color: white;
-  background-color: rgb(130, 12, 12);
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    color: white;
+    background-color: rgb(130, 12, 12);
 }
 
 
 /* Footer Styles */
 footer {
-  /* padding: 20px; */
-  text-align: center;
-  background-color: #595c88;
-  color: aliceblue;
-  font-size: 18px;
+    /* padding: 20px; */
+    text-align: center;
+    background-color: #595c88;
+    color: aliceblue;
+    font-size: 18px;
 }
